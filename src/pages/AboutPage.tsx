@@ -105,9 +105,9 @@ export default function AboutPage() {
 
       <h2 className="font-serif text-2xl mb-4">What RISE Is Not</h2>
       <ul className="list-disc list-inside space-y-2 text-muted-foreground text-sm">
-        <li>RISE does not determine eligibility or provide applications directly.</li>
-        <li>RISE does not offer financial advice or guarantee program availability.</li>
-        <li>RISE is an information and navigation tool — not a replacement for official agencies.</li>
+        <p>RISE does not determine eligibility or provide applications directly.</p>
+        <p>RISE does not offer financial advice or guarantee program availability.</p>
+        <p>RISE is an information and navigation tool — not a replacement for official agencies.</p>
       </ul>
     </div>
   );

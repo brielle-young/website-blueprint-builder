@@ -24,7 +24,7 @@ export default function ProgramCard({ program }: { program: Program }) {
   const expanded = hovered || locked ;
 
   const HandleClick = () => {
-    if(locked){ //if already locked, unlock by click and deexpands
+    if(locked){ //if already locked, unlock by click which de-expands
       setLocked(false);
       setHovered(false);
     } else{
