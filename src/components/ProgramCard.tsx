@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ExternalLink, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { Program, ProgramCategory } from "@/data/programs";
+import { set } from "date-fns";
 
 const CATEGORY_STYLES: Record<ProgramCategory, string> = {
   energy: "bg-energy/15 text-energy border-energy/30",
@@ -18,14 +19,26 @@ const CATEGORY_ICONS: Record<ProgramCategory, string> = {
 };
 
 export default function ProgramCard({ program }: { program: Program }) {
-  const [expanded, setExpanded] = useState(false);
+  const [hovered, setHovered] = useState(false);
+  const [locked, setLocked] = useState(false);
+  const expanded = hovered || locked ;
+
+  const HandleClick = () => {
+    if(locked){ //if already locked, unlock by click which de-expands
+      setLocked(false);
+      setHovered(false);
+    } else{
+      setLocked(true);
+    }
+  }
 
   return (
     <div
       className="group rounded-lg border bg-card p-5 transition-shadow hover:shadow-md"
-      onMouseEnter={() => program.details && setExpanded(true)}
-      onMouseLeave={() => setExpanded(false)}
-    >
+      onMouseEnter={() => program.details && setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onClick={() => program.details && HandleClick()}>
+    
       <div className="flex items-start justify-between gap-3 mb-3">
         <h3 className="font-serif text-lg text-card-foreground leading-snug">{program.name}</h3>
         <span
@@ -42,7 +55,7 @@ export default function ProgramCard({ program }: { program: Program }) {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25, ease: "easeOut" }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
             className="overflow-hidden"
           >
             <div className="rounded-md bg-muted p-3 mb-3 text-sm text-muted-foreground leading-relaxed border-l-2 border-primary/30">
@@ -64,7 +77,10 @@ export default function ProgramCard({ program }: { program: Program }) {
         </a>
         {program.details && (
           <button
-            onClick={() => setExpanded(!expanded)}
+            onClick={(e) => {
+              e.stopPropagation();
+              setLocked(!locked);
+            }}
             className="md:hidden inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground transition-colors"
           >
             Details <ChevronDown size={14} className={`transition-transform ${expanded ? "rotate-180" : ""}`} />
