@@ -13,7 +13,7 @@ import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import LocalInfoPage from "./pages/LocalInfoPage";
 import NotFound from "./pages/NotFound";
-import ScrolltoTop from "./components/ScrolltoTop";
+
 
 const queryClient = new QueryClient();
 
@@ -36,7 +36,7 @@ const App = () => (
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
-        <ScrolltoTop />
+        
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

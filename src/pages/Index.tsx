@@ -98,7 +98,7 @@ export default function Index() {
             transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="text-primary-foreground/80 text-lg md:text-xl max-w-2xl mx-auto mb-4 leading-relaxed"
           >
-            RISE makes it easy to find energy rebates, water incentives, transportation programs, and recycling initiatives — whether they're in your state or available nationwide.
+            RISE makes it easy to find energy rebates, water incentives, transportation programs, and recycling initiatives in your state or nationwide.
           </motion.p>
 
           <motion.p
@@ -180,7 +180,7 @@ export default function Index() {
         <div className="container max-w-3xl text-center">
           <h2 className="font-serif text-2xl md:text-3xl mb-4">Why RISE?</h2>
           <p className="text-muted-foreground leading-relaxed">
-            Finding sustainability programs shouldn't be complicated. Right now, information about rebates and incentives is scattered across dozens of government websites, buried in technical language, and hard to navigate. RISE brings it all together in one place — organized by state and category — so you can quickly find out what's available, who qualifies, and how to apply. No policy expertise required.
+            Finding sustainability programs shouldn't be complicated. Right now, information about rebates and incentives is scattered across dozens of government websites, buried in technical language, and hard to navigate. RISE organizes by state and category so you can quickly find out what's available, who qualifies, and how to apply. No policy expertise required.
           </p>
         </div>
       </section>
