@@ -180,7 +180,7 @@ export default function Index() {
         <div className="container max-w-3xl text-center">
           <h2 className="font-serif text-2xl md:text-3xl mb-4">Why RISE?</h2>
           <p className="text-muted-foreground leading-relaxed">
-            Finding sustainability programs shouldn't be complicated. Right now, information about rebates and incentives is scattered across dozens of government websites, buried in technical language, and hard to navigate. RISE organizes by state and category so you can quickly find out what's available, who qualifies, and how to apply. No policy expertise required.
+            Finding sustainability programs shouldn't be complicated. Right now, information about rebates and incentives is scattered across dozens of government websites and buried in technical language. RISE organizes information by state and category so you can quickly see what is available, whether you qualify, and how to apply, with no policy expertise required.
           </p>
         </div>
       </section>
