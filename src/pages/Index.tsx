@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Search, ArrowRight } from "lucide-react";
 import { useState, useMemo, useRef, useEffect } from "react";
 import { US_STATES, CATEGORIES } from "@/data/programs";
+import heroIllustration from "@/assets/hero-illustration.png";
 
 export default function Index() {
   const navigate = useNavigate();
@@ -122,6 +123,21 @@ export default function Index() {
                 </div>
               )}
             </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.55 }}
+            className="mt-12"
+          >
+            <img
+              src={heroIllustration}
+              alt="Energy, water, transportation and recycling icons"
+              width={1024}
+              height={512}
+              className="mx-auto max-w-sm md:max-w-md opacity-60"
+            />
           </motion.div>
         </div>
       </section>
