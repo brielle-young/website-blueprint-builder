@@ -1,8 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Search, ArrowRight, Leaf, Droplets, Bus, Recycle } from "lucide-react";
+import { Search, ArrowRight } from "lucide-react";
 import { useState, useMemo, useRef, useEffect } from "react";
 import { US_STATES, CATEGORIES } from "@/data/programs";
+import usMapOutline from "@/assets/us-map-outline.png";
 
 export default function Index() {
   const navigate = useNavigate();
@@ -38,23 +39,15 @@ export default function Index() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-background py-16 md:py-24">
-        {/* Subtle decorative accent */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
-
-        {/* Floating category icons */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="absolute inset-0 pointer-events-none hidden md:block"
-        >
-          <Leaf className="absolute top-[18%] left-[10%] text-primary/15 w-10 h-10 rotate-[-15deg]" />
-          <Droplets className="absolute top-[30%] right-[12%] text-primary/12 w-9 h-9 rotate-[10deg]" />
-          <Bus className="absolute bottom-[25%] left-[8%] text-primary/10 w-11 h-11 rotate-[5deg]" />
-          <Recycle className="absolute bottom-[18%] right-[10%] text-primary/15 w-10 h-10 rotate-[-8deg]" />
-          <Leaf className="absolute top-[55%] left-[18%] text-secondary/10 w-6 h-6 rotate-[30deg]" />
-          <Droplets className="absolute top-[15%] right-[25%] text-secondary/8 w-7 h-7 rotate-[-20deg]" />
-        </motion.div>
+        {/* US map watermark */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <img
+            src={usMapOutline}
+            alt=""
+            aria-hidden="true"
+            className="w-[90%] max-w-4xl opacity-[0.08]"
+          />
+        </div>
 
         <div className="container relative text-center">
           <motion.div
@@ -136,31 +129,6 @@ export default function Index() {
                   )}
                 </div>
               )}
-            </div>
-          </motion.div>
-
-          {/* Small icon row */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex items-center justify-center gap-6 mt-8"
-          >
-            <div className="flex items-center gap-1.5 text-muted-foreground/60">
-              <Leaf size={16} />
-              <span className="text-xs">Energy</span>
-            </div>
-            <div className="flex items-center gap-1.5 text-muted-foreground/60">
-              <Droplets size={16} />
-              <span className="text-xs">Water</span>
-            </div>
-            <div className="flex items-center gap-1.5 text-muted-foreground/60">
-              <Bus size={16} />
-              <span className="text-xs">Transportation</span>
-            </div>
-            <div className="flex items-center gap-1.5 text-muted-foreground/60">
-              <Recycle size={16} />
-              <span className="text-xs">Recycling</span>
             </div>
           </motion.div>
         </div>
