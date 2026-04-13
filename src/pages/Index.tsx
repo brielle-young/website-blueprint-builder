@@ -37,16 +37,31 @@ export default function Index() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-background py-28 md:py-36">
+      <section className="relative overflow-hidden bg-background py-16 md:py-24">
         {/* Subtle decorative accent */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
+
+        {/* Floating category icons */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="absolute inset-0 pointer-events-none hidden md:block"
+        >
+          <Leaf className="absolute top-[18%] left-[10%] text-primary/15 w-10 h-10 rotate-[-15deg]" />
+          <Droplets className="absolute top-[30%] right-[12%] text-primary/12 w-9 h-9 rotate-[10deg]" />
+          <Bus className="absolute bottom-[25%] left-[8%] text-primary/10 w-11 h-11 rotate-[5deg]" />
+          <Recycle className="absolute bottom-[18%] right-[10%] text-primary/15 w-10 h-10 rotate-[-8deg]" />
+          <Leaf className="absolute top-[55%] left-[18%] text-secondary/10 w-6 h-6 rotate-[30deg]" />
+          <Droplets className="absolute top-[15%] right-[25%] text-secondary/8 w-7 h-7 rotate-[-20deg]" />
+        </motion.div>
 
         <div className="container relative text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-block mb-6 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/10"
+            className="inline-block mb-5 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/10"
           >
             <span className="text-primary text-sm font-medium tracking-wide">Residential Incentives for Sustainability &amp; Environmentalism</span>
           </motion.div>
@@ -55,7 +70,7 @@ export default function Index() {
             initial={{ opacity: 0, y: 24, filter: "blur(4px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground mb-6 leading-[1.1]"
+            className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground mb-5 leading-[1.1]"
           >
             Find Sustainability Programs <br className="hidden sm:block" /> That Work for You
           </motion.h1>
@@ -64,7 +79,7 @@ export default function Index() {
             initial={{ opacity: 0, y: 24, filter: "blur(4px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-4 leading-relaxed"
+            className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-3 leading-relaxed"
           >
             RISE makes it easy to find energy rebates, water incentives, transportation programs, and recycling initiatives in your state or nationwide.
           </motion.p>
@@ -87,7 +102,7 @@ export default function Index() {
             initial={{ opacity: 0, y: 24, filter: "blur(4px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.7, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-md mx-auto mt-10"
+            className="max-w-md mx-auto mt-8"
             ref={dropdownRef}
           >
             <div className="relative">
@@ -124,19 +139,29 @@ export default function Index() {
             </div>
           </motion.div>
 
+          {/* Small icon row */}
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.55 }}
-            className="mt-12"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex items-center justify-center gap-6 mt-8"
           >
-            <img
-              src={heroIllustration}
-              alt="Energy, water, transportation and recycling icons"
-              width={1024}
-              height={512}
-              className="mx-auto max-w-sm md:max-w-md opacity-60"
-            />
+            <div className="flex items-center gap-1.5 text-muted-foreground/60">
+              <Leaf size={16} />
+              <span className="text-xs">Energy</span>
+            </div>
+            <div className="flex items-center gap-1.5 text-muted-foreground/60">
+              <Droplets size={16} />
+              <span className="text-xs">Water</span>
+            </div>
+            <div className="flex items-center gap-1.5 text-muted-foreground/60">
+              <Bus size={16} />
+              <span className="text-xs">Transportation</span>
+            </div>
+            <div className="flex items-center gap-1.5 text-muted-foreground/60">
+              <Recycle size={16} />
+              <span className="text-xs">Recycling</span>
+            </div>
           </motion.div>
         </div>
       </section>
