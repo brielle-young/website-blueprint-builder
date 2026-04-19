@@ -85,7 +85,8 @@ export default function AboutPage() {
             transition={{ duration: 0.5, delay: i * 0.1 }}
           >
             <h3 className="font-serif text-xl mb-4 text-foreground">{team.name}</h3>
-            <div className={`flex gap-4 justify-start ${team.name === "Leadership Team" ? "flex-nowrap" : "flex-wrap"}`}>              {team.members.map((member) => (
+            <div className="flex gap-4 justify-start flex-wrap">
+              {team.members.map((member) => (
                 <div
                   key={member.name}
                   className="w-48 rounded-lg border bg-card p-6 text-center transition-shadow hover:shadow-md">
@@ -113,11 +114,11 @@ export default function AboutPage() {
       <hr className="my-10 border-border" />
 
       <h2 className="font-serif text-2xl mb-4">What RISE Is Not</h2>
-      <div className="space-y-3 text-muted-foreground text-sm">
-        <p>&nbsp;RISE does not determine eligibility or provide applications directly.</p>
-        <p>RISE does not offer financial advice or guarantee program availability.</p>
-        <p>RISE is an information and navigation tool, not a replacement for official agencies.</p>
-      </div>
+      <ul className="list-disc pl-6 space-y-3 text-muted-foreground text-sm">
+        <li>RISE does not determine eligibility or provide applications directly.</li>
+        <li>RISE does not offer financial advice or guarantee program availability.</li>
+        <li>RISE is an information and navigation tool, not a replacement for official agencies.</li>
+      </ul>
     </div>
   );
 }
