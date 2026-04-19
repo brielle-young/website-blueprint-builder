@@ -18,9 +18,9 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b bg-card/80 backdrop-blur-md">
-      <div className="container flex h-16 items-center justify-between">
+      <div className="container flex h-20 md:h-24 items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
-          <img src={riseLogo} alt="RISE logo" className="h-10 w-auto" />
+          <img src={riseLogo} alt="RISE logo" className="h-14 md:h-16 w-auto" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-1">
@@ -28,10 +28,10 @@ export default function Navbar() {
             <Link
               key={l.to}
               to={l.to}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+              className={`px-4 py-2 rounded-md text-base font-medium transition-colors ${
                 pathname === l.to
                   ? "bg-primary text-primary-foreground"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                  : "text-foreground/80 hover:text-foreground hover:bg-muted"
               }`}
             >
               {l.label}
@@ -55,10 +55,10 @@ export default function Navbar() {
               key={l.to}
               to={l.to}
               onClick={() => setOpen(false)}
-              className={`block px-4 py-2.5 rounded-md text-sm font-medium transition-colors ${
+              className={`block px-4 py-3 rounded-md text-base font-medium transition-colors ${
                 pathname === l.to
                   ? "bg-primary text-primary-foreground"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                  : "text-foreground/80 hover:text-foreground hover:bg-muted"
               }`}
             >
               {l.label}
