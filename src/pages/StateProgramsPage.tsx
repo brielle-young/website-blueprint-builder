@@ -70,7 +70,7 @@ export default function StateProgramsPage() {
       </p>
       <h1 className="font-serif text-3xl md:text-4xl mb-2">State Programs</h1>
       <p className="text-muted-foreground mb-8">
-        Browse sustainability programs available at the state level across the U.S.
+        Browse incentives available at the state level across the U.S.
       </p>
 
       <div className="flex flex-col sm:flex-row gap-4 mb-8">
