@@ -45,7 +45,7 @@ export default function Index() {
             src={usMapOutline}
             alt=""
             aria-hidden="true"
-            className="w-[90%] max-w-4xl opacity-[0.08]"
+            className="w-[140%] max-w-none md:w-[120%] md:max-w-6xl opacity-[0.15]"
           />
         </div>
 
