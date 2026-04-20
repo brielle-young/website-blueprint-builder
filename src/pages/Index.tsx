@@ -30,10 +30,9 @@ export default function Index() {
   }, []);
 
   const handleSelectState = (code: string) => {
-    const state = US_STATES.find((s) => s.code === code);
     setShowDropdown(false);
     setSearch("");
-    navigate(`/states?state=${encodeURIComponent(state?.name ?? code)}`);
+    navigate(`/states?state=${code}`);
   };
 
   return (
