@@ -39,7 +39,7 @@ export default function Index() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-background py-16 md:py-24">
+      <section className="relative bg-background py-16 md:py-24 z-20">
         {/* US map watermark */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <img
