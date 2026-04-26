@@ -4,6 +4,7 @@ import { type ProgramCategory } from "@/data/programs";
 import { fetchPrograms } from "@/data/programs";
 import ProgramCard from "@/components/ProgramCard";
 import CategoryFilter from "@/components/CategoryFilter";
+import { US_STATES } from "@/data/programs";
 import {
   Select,
   SelectContent,
@@ -85,11 +86,11 @@ export default function StateProgramsPage() {
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="all">All States & Territories</SelectItem>
-            {availableStates.map((name) => (
-              <SelectItem key={name} value={name}>
-                {name}
-              </SelectItem>
-            ))}
+          {US_STATES.map((s) => (
+            <SelectItem key={s.code} value={s.name}>
+              {s.name}
+            </SelectItem>
+          ))}
           </SelectContent>
         </Select>
       </div>
